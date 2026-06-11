@@ -38,7 +38,7 @@ export default function AboutSection() {
     const { displayed, done } = useTypewriter(heading, 40, inView)
 
     return (
-        <section ref={ref} className="bg-white py-16 px-6 overflow-hidden">
+        <section id="about"ref={ref} className="bg-white py-16 px-6 overflow-hidden">
             <div className="max-w-6xl mx-auto">
 
 
@@ -55,10 +55,36 @@ export default function AboutSection() {
                         }}
                     >
                         {/* Sparkles */}
-                        <div className="absolute top-2 left-6 text-orange-500 text-3xl select-none" style={{ lineHeight: 1, animation: inView ? 'sparkle 2s ease infinite' : 'none' }}>✦</div>
-                        <div className="absolute top-8 left-16 text-orange-400 text-lg select-none" style={{ animation: inView ? 'sparkle 2.4s ease 0.3s infinite' : 'none' }}>✦</div>
-                        <div className="absolute bottom-16 left-2 text-orange-300 text-sm select-none" style={{ animation: inView ? 'sparkle 2.8s ease 0.6s infinite' : 'none' }}>✦</div>
+                        <div
+                            className="absolute top-2 left-6 text-orange-500 text-6xl select-none"
+                            style={{
+                                zIndex: 50,
+                                lineHeight: 1,
+                                animation: inView ? 'sparkle 2s ease infinite' : 'none'
+                            }}
+                        >
+                            ✦
+                        </div>
 
+                        <div
+                            className="absolute top-8 left-16 text-orange-400 text-5xl select-none"
+                            style={{
+                                zIndex: 50,
+                                animation: inView ? 'sparkle 2.4s ease 0.3s infinite' : 'none'
+                            }}
+                        >
+                            ✦
+                        </div>
+
+                        <div
+                            className="absolute bottom-16 left-2 text-green-500 text-4xl select-none"
+                            style={{
+                                zIndex: 30,
+                                animation: inView ? 'sparkle 2.8s ease 0.6s infinite' : 'none'
+                            }}
+                        >
+                            ✦
+                        </div>
                         {/* Green background card */}
                         <div
                             className="absolute left-10 top-0 w-52 h-64 rounded-2xl overflow-hidden"
@@ -82,7 +108,7 @@ export default function AboutSection() {
 
                         {/* Yellow foreground card */}
                         <div
-                            className="absolute left-36 top-24 w-44 h-48 rounded-2xl overflow-hidden shadow-xl"
+                            className="absolute left-50  top-24 w-44 h-48 rounded-2xl overflow-hidden shadow-xl"
                             style={{
                                 background: '#facc15',
                                 opacity: inView ? 1 : 0,
@@ -122,7 +148,7 @@ export default function AboutSection() {
                             <p className="text-xs text-gray-400 mt-1.5">50.25% Increase From Last Week</p>
                         </div>
                     </div>
-                    
+
                     <div
                         className="flex-1 max-w-xl"
                         style={{
@@ -172,18 +198,15 @@ export default function AboutSection() {
                             potential to achieve success with the right guidance and dedication.
                         </p>
 
-                        <button
-                            className="px-6 py-3 rounded-lg font-bold text-white text-sm transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
-                            style={{
-                                background: '#1a1a1a',
-                                fontFamily: "'Poppins', sans-serif",
-                                opacity: done ? 1 : 0,
-                                transition: 'opacity 0.5s ease 0.4s',
-                            }}
-                        >
-                            Learn More
-                        </button>
-
+                      <button
+  className="px-6 py-3 rounded-lg font-bold text-white text-sm bg-[#1a1a1a] transition-all duration-300 hover:bg-[#0EA569] hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
+  style={{
+    fontFamily: "'Poppins', sans-serif",
+    opacity: done ? 1 : 0,
+  }}
+>
+  Learn More
+</button>
                         {/* About Highlight Box */}
                         <div
                             className="mt-8 flex items-start gap-4 rounded-2xl px-5 py-4 border"
@@ -222,8 +245,8 @@ export default function AboutSection() {
           50%       { opacity: 0; }
         }
         @keyframes sparkle {
-          0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
-          50%       { opacity: 0.4; transform: scale(1.3) rotate(20deg); }
+          0%, 100% { opacity: 0.7; transform: scale(1) rotate(0deg); }
+          50%       { opacity: 1; transform: scale(1.5) rotate(20deg); }
         }
       `}</style>
         </section>

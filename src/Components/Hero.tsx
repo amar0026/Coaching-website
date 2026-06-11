@@ -18,16 +18,34 @@ const programs = [
         icon: '📚',
         title: 'School Coaching',
         items: ['Classes 5–12', 'CBSE, ICSE & State Boards', 'Subject-wise preparation'],
+        cardBg: '#FACC15',
+        cardAccent: '#b45309',
+        dotColor: '#92400e',
+        textColor: '#1a1a1a',
+        subTextColor: '#374151',
+        btnColor: '#92400e',
     },
     {
         icon: '🎓',
         title: 'Competitive Exam Preparation',
         items: ['JEE', 'NEET', 'CUET', 'Olympiads'],
+        cardBg: '#0EA569',
+        cardAccent: '#fff',
+        dotColor: '#d1fae5',
+        textColor: '#ffffff',
+        subTextColor: '#d1fae5',
+        btnColor: '#d1fae5',
     },
     {
         icon: '🏆',
         title: 'Career & Skill Development',
         items: ['Spoken English', 'Computer Fundamentals', 'Personality Development', 'Interview Preparation'],
+        cardBg: '#60A5FA',
+        cardAccent: '#1e40af',
+        dotColor: '#dbeafe',
+        textColor: '#1e3a5f',
+        subTextColor: '#1e3a8a',
+        btnColor: '#1e3a8a',
     },
 ]
 
@@ -69,7 +87,6 @@ export default function HeroSection() {
     const tw2 = useTypewriter(line2, 60, tw1.done ? 100 : 99999)
     const tw3 = useTypewriter(line3, 50, tw2.done ? 100 : 99999)
 
-    // Programs section heading
     const progHeading = 'Our Learning Programs'
     const twProg = useTypewriter(progHeading, 55, 600)
 
@@ -85,10 +102,31 @@ export default function HeroSection() {
         }, 300)
     }, [])
 
+    const students = [
+        {
+            bg: "#FACC15",
+            delay: "0s",
+            img: "https://res.cloudinary.com/dquki4xol/image/upload/v1781091901/college-student-YCNL3GU-1-ptib3cymvqexaw01pv2ajt0xkogtxflro86oam5oha_dk7lis.png",
+            size: 'small', // left
+        },
+        {
+            bg: "#0EA569",
+            delay: "0.15s",
+            img: "https://res.cloudinary.com/dquki4xol/image/upload/v1781086088/45694a86c735b2e1b40d6a970152d7b7b1f8506b_yab6gd.png",
+            size: 'large', // center
+        },
+        {
+            bg: "#17ADDF",
+            delay: "0s",
+            img: "https://res.cloudinary.com/dquki4xol/image/upload/v1781159882/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTExL3Jhd3BpeGVsX29mZmljZV8zMF9waG90b19vZl95b3VuZ19zb3V0aF9hc2lhbl9naXJsX2hvbGRpbmdfc3R1ZF8xOTQyYTRkYi01YjA5LTQ2NDItYjc0YS04YjU4MjdiYjhjMjgucG5n-removebg-previe_ygo6pt.png",
+            size: 'small', // right
+        },
+    ]
+
     return (
         <>
             {/* ── HERO SECTION ── */}
-            <section className="relative bg-white overflow-hidden min-h-[580px] flex flex-col">
+            <section className="relative bg-white overflow-hidden flex flex-col">
 
                 {/* Decorations */}
                 <div className="absolute top-6 right-16 w-14 h-8 rounded-full z-10"
@@ -98,7 +136,6 @@ export default function HeroSection() {
                 </div>
                 <div className="absolute top-20 right-10 w-5 h-5 rounded-full" style={{ background: '#86efac' }} />
                 <DecorBlob color="#f9a8d4" size="56px" className="left-10 top-[44%]" />
-
 
                 {/* Curved arrow */}
                 <div ref={arrowRef} className="absolute left-8 top-24 w-20 h-20 pointer-events-none">
@@ -114,12 +151,10 @@ export default function HeroSection() {
                         className="font-black text-4xl md:text-5xl text-gray-900 leading-tight max-w-2xl min-h-[4rem] md:min-h-[6rem]"
                         style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
-                        {/* Line 1 */}
                         <span>{tw1.displayed}</span>
                         {tw1.done && (
                             <>
                                 {' '}
-                                {/* Line 2 — highlighted word */}
                                 <span className="relative inline-block">
                                     <span className="relative z-10">{tw2.displayed}</span>
                                     {tw2.done && (
@@ -137,7 +172,6 @@ export default function HeroSection() {
                                 <span>{tw3.displayed}</span>
                             </>
                         )}
-                        {/* Blinking cursor */}
                         {!tw3.done && (
                             <span style={{ animation: 'blink 0.75s step-end infinite', borderRight: '3px solid #0EA569', marginLeft: '2px' }} />
                         )}
@@ -155,72 +189,87 @@ export default function HeroSection() {
                         teaching methods that empower students to reach their full potential and build confidence
                         in every subject.
                     </p>
-
-
                 </div>
-                {/* Students Row */}
-                <div className="relative z-10 flex justify-center items-end  gap-6 px-4">
-                    {[
-                        {
-                            bg: "#FACC15",
-                            delay: "0s",
-                            img: "https://res.cloudinary.com/dquki4xol/image/upload/v1781091901/college-student-YCNL3GU-1-ptib3cymvqexaw01pv2ajt0xkogtxflro86oam5oha_dk7lis.png",
-                        },
-                        {
-                            bg: "#0EA569",
-                            delay: "0.15s",
-                            img: "https://res.cloudinary.com/dquki4xol/image/upload/v1781086088/45694a86c735b2e1b40d6a970152d7b7b1f8506b_yab6gd.png",
-                        },
-                        {
-                            bg: "#60A5FA",
-                            delay: "0.3s",
-                            img: "https://res.cloudinary.com/dquki4xol/image/upload/v1781086088/cc8c413506c072f3183641c79191755a420d7b0c_i8iasn.png",
-                        },
-                    ].map((s, i) => (
-                        <div
-                            key={i}
-                            className="relative w-44 h-72 flex justify-center"
-                            style={{
-                                animation: `floatUp 0.6s ease ${s.delay} both`,
-                            }}
-                        >
-                            {/* Circle */}
-                            <div
-                                className="absolute bottom-0 w-44 h-44 rounded-full"
-                                style={{ background: s.bg }}
-                            />
 
-                            {/* Student Image */}
-                            <img
-                                src={s.img}
-                                alt={`Student ${i + 1}`}
-                                draggable={false}
-                                className="absolute bottom-0 left-1/2 -translate-x-1/2
-                   w-[170px] md:w-[210px] h-auto object-contain z-10"
-                            />
-                        </div>
-                    ))}
+                {/* Students Row with Yellow Arch Background */}
+                <div className="relative z-10 flex justify-center items-end mt-6" style={{ minHeight: '280px' }}>
+
+                    {/* Big Yellow Arch behind all students */}
+                    <div
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2"
+                        style={{
+                            width: '520px',
+                            height: '260px',
+                            background: '#EEFFD9',
+                            borderRadius: '260px 260px 0 0',
+                            zIndex: 0,
+                        }}
+                    />
+
+                    {/* Students */}
+                    <div className="relative z-10 flex justify-center items-end gap-2">
+                        {students.map((s, i) => {
+                            const isCenter = s.size === 'large'
+                            const circleSize = isCenter ? '200px' : '140px'
+                            const imgWidth = isCenter ? '220px' : '160px'
+                            const containerH = isCenter ? '290px' : '220px'
+                            const containerW = isCenter ? '200px' : '148px'
+
+                            return (
+                                <div
+                                    key={i}
+                                    className="relative flex justify-center items-end"
+                                    style={{
+                                        width: containerW,
+                                        height: containerH,
+                                        animation: `floatUp 0.6s ease ${s.delay} both`,
+                                    }}
+                                >
+                                    {/* Colored circle per student */}
+                                    <div
+                                        className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full"
+                                        style={{
+                                            width: circleSize,
+                                            height: `calc(${circleSize} / 2)`,
+                                            background: s.bg,
+                                            borderRadius: `${circleSize} ${circleSize} 0 0`,
+                                            zIndex: 1,
+                                        }}
+                                    />
+
+                                    {/* Student Image */}
+                                    <img
+                                        src={s.img}
+                                        alt={`Student ${i + 1}`}
+                                        draggable={false}
+                                        className="absolute bottom-0 left-1/2 -translate-x-1/2 object-contain z-10"
+                                        style={{ width: imgWidth, height: 'auto' }}
+                                    />
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             </section>
 
             {/* ── PROGRAMS SECTION ── */}
-            <section className="relative  overflow-hidden" style={{ background: '#008D78' }}>
+            <section className="relative overflow-hidden" style={{ background: '#008D78' }}>
                 {/* BG circles */}
                 <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full opacity-10"
                     style={{ background: '#0EA569', transform: 'translate(-30%, 30%)' }} />
-                <div className="absolute bottom-8 right-8 w-24 h-24 rounded-full opacity-15"
+                <div className="absolute bottom-4 right-8 w-20 h-20 rounded-full opacity-15"
                     style={{ background: '#FACC15' }} />
 
-                <div className="relative z-10 max-w-6xl mx-auto px-6 py-8">
-                    <div className="flex flex-col md:flex-row gap-10 items-start">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 py-5">
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
 
                         {/* Left: title block */}
-                        <div className="md:w-64 flex-shrink-0">
-                            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#86efac' }}>
+                        <div className="md:w-56 flex-shrink-0">
+                            <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#86efac' }}>
                                 What We Offer
                             </p>
                             <h2
-                                className="text-3xl font-black text-white leading-tight min-h-[4.5rem]"
+                                className="text-2xl font-black text-white leading-tight min-h-[3.5rem]"
                                 style={{ fontFamily: "'Poppins', sans-serif" }}
                             >
                                 {twProg.displayed}
@@ -228,57 +277,55 @@ export default function HeroSection() {
                                     <span style={{ animation: 'blink 0.75s step-end infinite', borderRight: '3px solid #FACC15', marginLeft: '2px' }} />
                                 )}
                             </h2>
-                            <div className="mt-3 w-12 h-1 rounded-full" style={{ background: '#FACC15' }} />
-                            <p className="mt-4 text-sm leading-relaxed" style={{ color: '#a7f3d0' }}>
-                                Choose the right learning path based on your academic goals and educational level.
+                            <div className="mt-2 w-10 h-1 rounded-full" style={{ background: '#FACC15' }} />
+                            <p className="mt-3 text-xs leading-relaxed" style={{ color: '#a7f3d0' }}>
+                                Choose the right learning path based on your academic goals.
                             </p>
-                            <div className="hidden md:block mt-8 w-px h-32"
+                            <div className="hidden md:block mt-6 w-px h-24"
                                 style={{ background: 'rgba(255,255,255,0.2)' }} />
                         </div>
 
-                        {/* Right: cards */}
-                        <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-5">
+                        {/* Right: colored cards */}
+                        <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4">
                             {programs.map((prog, i) => {
                                 const isHovered = hoveredCard === i
                                 return (
                                     <div
                                         key={i}
-                                        className="rounded-2xl p-5 cursor-pointer group"
+                                        className="rounded-2xl p-4 cursor-pointer"
                                         style={{
-                                            background: isHovered ? '#FACC15' : 'rgba(255,255,255,0.08)',
-                                            border: isHovered ? 'none' : '1px solid rgba(255,255,255,0.15)',
-                                            backdropFilter: 'blur(10px)',
-                                            transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
-                                            boxShadow: isHovered ? '0 16px 40px rgba(0,0,0,0.25)' : 'none',
+                                            background: prog.cardBg,
+                                            transform: isHovered ? 'translateY(-6px) scale(1.02)' : 'translateY(0) scale(1)',
+                                            boxShadow: isHovered ? '0 16px 40px rgba(0,0,0,0.25)' : '0 4px 12px rgba(0,0,0,0.15)',
                                             transition: 'all 0.3s cubic-bezier(0.34,1.56,0.64,1)',
                                         }}
                                         onMouseEnter={() => setHoveredCard(i)}
                                         onMouseLeave={() => setHoveredCard(null)}
                                     >
                                         <div
-                                            className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4 transition-transform duration-300 group-hover:scale-110"
-                                            style={{ background: isHovered ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)' }}
+                                            className="w-10 h-10 rounded-xl flex items-center justify-center text-xl mb-3"
+                                            style={{ background: 'rgba(0,0,0,0.1)' }}
                                         >
                                             {prog.icon}
                                         </div>
 
                                         <h3
-                                            className="font-bold text-base leading-snug mb-3 transition-colors duration-300"
-                                            style={{ fontFamily: "'Poppins', sans-serif", color: isHovered ? '#1a1a1a' : 'white' }}
+                                            className="font-bold text-sm leading-snug mb-2"
+                                            style={{ fontFamily: "'Poppins', sans-serif", color: prog.textColor }}
                                         >
                                             {prog.title}
                                         </h3>
 
-                                        <ul className="space-y-1.5">
+                                        <ul className="space-y-1">
                                             {prog.items.map((item, j) => (
                                                 <li
                                                     key={j}
-                                                    className="flex items-center gap-2 text-sm transition-colors duration-300"
-                                                    style={{ color: isHovered ? '#374151' : '#d1fae5' }}
+                                                    className="flex items-center gap-2 text-xs"
+                                                    style={{ color: prog.subTextColor }}
                                                 >
                                                     <span
-                                                        className="w-1.5 h-1.5 rounded-full flex-shrink-0 transition-colors duration-300"
-                                                        style={{ background: isHovered ? '#0EA569' : '#86efac' }}
+                                                        className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                                                        style={{ background: prog.dotColor }}
                                                     />
                                                     {item}
                                                 </li>
@@ -286,13 +333,10 @@ export default function HeroSection() {
                                         </ul>
 
                                         <button
-                                            className="mt-4 text-xs font-bold flex items-center gap-1 transition-all duration-300"
-                                            style={{
-                                                color: isHovered ? '#0B7A4F' : '#86efac',
-                                                gap: isHovered ? '8px' : '4px',
-                                            }}
+                                            className="mt-3 text-xs font-bold flex items-center gap-1"
+                                            style={{ color: prog.btnColor }}
                                         >
-                                            Learn More <span className="text-base">→</span>
+                                            Learn More <span className="text-sm">→</span>
                                         </button>
                                     </div>
                                 )

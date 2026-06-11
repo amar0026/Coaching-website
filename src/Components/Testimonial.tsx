@@ -54,7 +54,7 @@ const doubled = [...testimonials, ...testimonials]
 
 export default function Testimonials() {
   return (
-    <section className="py-16" style={{ background: '#f8fafc' }}>
+    <section   id="project" className="py-16" style={{ background: '#f8fafc' }}>
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}

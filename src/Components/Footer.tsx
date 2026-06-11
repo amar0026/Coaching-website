@@ -48,7 +48,7 @@ const contactInfo = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#0a1628' }}>
+    <footer   id="contact" style={{ background: '#0a1628' }}>
 
     
 

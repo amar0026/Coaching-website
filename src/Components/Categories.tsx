@@ -44,195 +44,494 @@ export default function Categories() {
   const tab = tabs[active]
 
   return (
-    <section className="py-20 px-6" style={{ background: '#f8fafc' }}>
-      <div className="max-w-6xl mx-auto">
+    <section
+      id="programs"
+      style={{
+        background: '#fff',
+        fontFamily: "'Inter', 'Poppins', sans-serif",
+        padding: '72px 48px',
+        minHeight: '560px',
+      }}
+    >
+      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
-        {/* Header */}
-        <div className="text-center mb-12">
-          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#0EA569' }}>
-            Our Programs
-          </p>
-          <h2
-            className="text-3xl md:text-4xl font-black text-gray-900"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Programs for Every Learner
-          </h2>
-          <p className="mt-3 text-gray-500 text-sm max-w-xl mx-auto leading-relaxed">
-            Whether you're preparing for school exams, college academics, or competitive tests, we have
-            specialized courses tailored to your needs.
-          </p>
-          <div className="mt-4 w-12 h-1 rounded-full mx-auto" style={{ background: '#FACC15' }} />
-        </div>
+        {/* ── TWO-COLUMN LAYOUT ── */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: '60px',
+            flexWrap: 'wrap',
+          }}
+        >
 
-        <div className="flex flex-col lg:flex-row gap-8 items-start">
+          {/* ── LEFT COLUMN ── */}
+          <div style={{ flex: '1 1 420px', minWidth: 0 }}>
 
-          {/* Left — Tabs + Content */}
-          <div className="flex-1 min-w-0">
-
-            {/* Tab Buttons */}
-            <div className="flex gap-3 mb-8 flex-wrap">
-              {tabs.map((t, i) => (
-                <button
-                  key={t.key}
-                  onClick={() => setActive(i)}
-                  className="relative px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 overflow-hidden"
-                  style={{
-                    fontFamily: "'Poppins', sans-serif",
-                    background: active === i ? t.color : '#fff',
-                    color: active === i ? '#fff' : '#6b7280',
-                    border: active === i ? `2px solid ${t.color}` : '2px solid #e5e7eb',
-                    boxShadow: active === i ? `0 4px 16px ${t.color}40` : 'none',
-                    transform: active === i ? 'translateY(-2px)' : 'translateY(0)',
-                  }}
-                >
-                  <span className="mr-1.5">{t.icon}</span>
-                  {t.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Content Card */}
-            <div
-              key={tab.key}
-              className="rounded-3xl p-8 md:p-10 transition-all duration-500"
+            {/* Eyebrow */}
+            <p
               style={{
-                background: '#fff',
-                border: `1.5px solid ${tab.color}30`,
-                boxShadow: `0 8px 40px ${tab.color}18`,
-                animation: 'fadeSlide 0.35s ease forwards',
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                color: '#0EA569',
+                marginBottom: '12px',
+                margin: '0 0 12px',
               }}
             >
-              {/* Top accent */}
+              Our Programs
+            </p>
+
+            {/* Headline */}
+            <h2
+              style={{
+                fontSize: '36px',
+                fontWeight: 700,
+                lineHeight: 1.22,
+                color: '#111',
+                margin: '0 0 14px',
+                fontFamily: "'Poppins', sans-serif",
+              }}
+            >
+              Programs for Every Learner
+            </h2>
+
+            {/* Subtitle */}
+            <p
+              style={{
+                fontSize: '14px',
+                color: '#6b7280',
+                lineHeight: 1.75,
+                maxWidth: '420px',
+                margin: '0 0 10px',
+              }}
+            >
+              Whether you're preparing for school exams, college academics, or competitive
+              tests, we have specialized courses tailored to your needs.
+            </p>
+
+            {/* Yellow accent bar */}
+            <div
+              style={{
+                width: '48px',
+                height: '4px',
+                borderRadius: '99px',
+                background: '#FACC15',
+                margin: '0 0 32px',
+              }}
+            />
+
+            {/* Tab Buttons */}
+            <div style={{ display: 'flex', gap: '10px', marginBottom: '28px', flexWrap: 'wrap' }}>
+              {tabs.map((t, i) => {
+                const isActive = active === i
+                return (
+                  <button
+                    key={t.key}
+                    onClick={() => setActive(i)}
+                    style={{
+                      padding: '9px 22px',
+                      borderRadius: '8px',
+                      border: isActive ? `1.5px solid ${t.color}` : '1px solid #d1d5db',
+                      background: isActive ? t.color : '#fff',
+                      color: isActive ? '#fff' : '#6b7280',
+                      fontSize: '13px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      transition: 'all 0.18s',
+                      fontFamily: "'Poppins', sans-serif",
+                      boxShadow: isActive ? `0 4px 14px ${t.color}35` : 'none',
+                      transform: isActive ? 'translateY(-1px)' : 'translateY(0)',
+                    }}
+                  >
+                    <span style={{ marginRight: '6px' }}>{t.icon}</span>
+                    {t.label}
+                  </button>
+                )
+              })}
+            </div>
+
+            {/* Tab description (below tabs, like image) */}
+            <p
+              style={{
+                fontSize: '13px',
+                color: '#6b7280',
+                lineHeight: 1.75,
+                maxWidth: '400px',
+                margin: 0,
+              }}
+            >
+              {tab.description}
+            </p>
+          </div>
+
+          {/* ── RIGHT COLUMN ── Visual area */}
+          <div
+            style={{
+              flex: '1 1 320px',
+              position: 'relative',
+              minHeight: '360px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {/* Blue decorative card */}
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                width: '230px',
+                height: '230px',
+                background: tab.color,
+                borderRadius: '20px',
+                transition: 'background 0.4s',
+              }}
+            />
+
+            {/* Decorative dots */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '14px',
+                right: '248px',
+                width: '16px',
+                height: '16px',
+                borderRadius: '50%',
+                background: '#a3e635',
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                top: '2px',
+                right: '24px',
+                width: '28px',
+                height: '28px',
+                borderRadius: '50%',
+                background: '#d946ef',
+              }}
+            />
+
+            {/* Stat card — Highlights count */}
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '40px',
+                left: 0,
+                background: '#fff',
+                border: '1px solid #e5e7eb',
+                borderRadius: '14px',
+                padding: '14px 18px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '14px',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                zIndex: 2,
+                minWidth: '160px',
+              }}
+            >
               <div
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold mb-5"
-                style={{ background: tab.light, color: tab.color }}
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  background: tab.color,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  transition: 'background 0.4s',
+                }}
               >
-                <span>{tab.icon}</span> {tab.label} Program
+                <div
+                  style={{
+                    width: '14px',
+                    height: '14px',
+                    borderRadius: '50%',
+                    background: 'rgba(255,255,255,0.7)',
+                  }}
+                />
+              </div>
+              <div>
+                <div
+                  style={{
+                    fontSize: '16px',
+                    fontWeight: 700,
+                    color: '#111',
+                    lineHeight: 1.2,
+                    fontFamily: "'Poppins', sans-serif",
+                  }}
+                >
+                  54.3K
+                </div>
+                <div style={{ fontSize: '11px', color: '#9ca3af', marginTop: '2px' }}>
+                  Reach &nbsp;4.5%
+                </div>
+              </div>
+            </div>
+
+            {/* Faculty card */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '158px',
+                right: '-8px',
+                background: '#fff',
+                border: '1px solid #e5e7eb',
+                borderRadius: '14px',
+                overflow: 'hidden',
+                minWidth: '200px',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                zIndex: 2,
+              }}
+            >
+              {/* Card header — dark gradient */}
+              <div
+                style={{
+                  background: 'linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)',
+                  padding: '12px 14px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                }}
+              >
+                <div
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '8px',
+                    background: 'rgba(250,204,21,0.2)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '16px',
+                    flexShrink: 0,
+                  }}
+                >
+                  👨‍🏫
+                </div>
+                <div>
+                  <p
+                    style={{
+                      margin: 0,
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      color: '#fff',
+                      fontFamily: "'Poppins', sans-serif",
+                    }}
+                  >
+                    Expert teachers
+                  </p>
+                  <p style={{ margin: 0, fontSize: '10px', color: 'rgba(255,255,255,0.5)' }}>
+                    Meet your mentors
+                  </p>
+                </div>
+                <span
+                  style={{
+                    marginLeft: 'auto',
+                    fontSize: '10px',
+                    color: 'rgba(255,255,255,0.4)',
+                    cursor: 'pointer',
+                  }}
+                >
+                  more
+                </span>
               </div>
 
-              <h3
-                className="text-2xl font-black text-gray-900 mb-3"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                {tab.heading}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-8">
-                {tab.description}
-              </p>
-
-              {/* Highlights grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {tab.highlights.map((h, i) => (
+              {/* Faculty rows */}
+              <div style={{ padding: '12px 14px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {faculty.map((f) => (
                   <div
-                    key={i}
-                    className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-gray-700"
-                    style={{ background: tab.light, animationDelay: `${i * 60}ms`, animation: 'fadeSlide 0.4s ease forwards' }}
+                    key={f.avatar}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      cursor: 'pointer',
+                    }}
                   >
-                    <span
-                      className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs"
-                      style={{ background: tab.color }}
+                    <div
+                      style={{
+                        width: '28px',
+                        height: '28px',
+                        borderRadius: '50%',
+                        background: f.color,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '9px',
+                        fontWeight: 700,
+                        color: '#fff',
+                        flexShrink: 0,
+                        fontFamily: "'Poppins', sans-serif",
+                      }}
                     >
-                      ✓
-                    </span>
-                    {h}
+                      {f.avatar}
+                    </div>
+                    <div>
+                      <div
+                        style={{
+                          fontSize: '12px',
+                          fontWeight: 600,
+                          color: '#111',
+                          fontFamily: "'Poppins', sans-serif",
+                        }}
+                      >
+                        {f.name}
+                      </div>
+                      <div
+                        style={{
+                          height: '3px',
+                          width: '60px',
+                          background: f.color,
+                          borderRadius: '2px',
+                          marginTop: '3px',
+                        }}
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
 
-              {/* CTA */}
-              <button
-                className="mt-8 px-7 py-3 rounded-xl text-sm font-black text-white transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  background: tab.color,
-                  boxShadow: `0 4px 20px ${tab.color}40`,
-                }}
-              >
-                Explore {tab.label} Courses →
-              </button>
-            </div>
-          </div>
-
-          {/* Right — Faculty Card */}
-          <div
-            className="w-full lg:w-72 xl:w-80 flex-shrink-0 rounded-3xl overflow-hidden"
-            style={{
-              background: '#fff',
-              border: '1.5px solid #e5e7eb',
-              boxShadow: '0 8px 40px rgba(0,0,0,0.07)',
-            }}
-          >
-            {/* Card header */}
-            <div
-              className="px-6 py-5 flex items-center gap-3"
-              style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)' }}
-            >
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0"
-                style={{ background: 'rgba(250,204,21,0.2)' }}
-              >
-                👨‍🏫
-              </div>
-              <div>
-                <p
-                  className="text-white font-black text-sm"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
-                  Expert Faculty Team
-                </p>
-                <p className="text-white/50 text-xs">Meet your mentors</p>
-              </div>
-            </div>
-
-            {/* Faculty list */}
-            <div className="px-5 py-5 flex flex-col gap-4">
-              {faculty.map((f, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 p-3 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md cursor-pointer group"
+              {/* Footer button */}
+              <div style={{ padding: '0 14px 12px' }}>
+                <button
                   style={{
-                    border: '1px solid #f3f4f6',
-                    animationDelay: `${i * 100}ms`,
-                    animation: 'fadeSlide 0.5s ease forwards',
+                    width: '100%',
+                    padding: '8px',
+                    borderRadius: '8px',
+                    border: 'none',
+                    background: '#0EA569',
+                    color: '#fff',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    fontFamily: "'Poppins', sans-serif",
+                    boxShadow: '0 2px 10px #0EA56935',
                   }}
                 >
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-black flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
-                    style={{ background: f.color, fontFamily: "'Poppins', sans-serif" }}
-                  >
-                    {f.avatar}
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-bold text-gray-900 truncate"
-                      style={{ fontFamily: "'Poppins', sans-serif" }}>
-                      {f.name}
-                    </p>
-                    <p className="text-xs text-gray-400">{f.role}</p>
-                  </div>
+                  Meet All Faculty →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── BOTTOM: Content card + highlights (below hero row) ── */}
+        <div style={{ marginTop: '52px' }}>
+          <div
+            key={tab.key}
+            style={{
+              background: '#fff',
+              border: `1.5px solid ${tab.color}30`,
+              borderRadius: '24px',
+              padding: '40px',
+              boxShadow: `0 8px 40px ${tab.color}15`,
+              animation: 'fadeSlide 0.35s ease forwards',
+            }}
+          >
+            {/* Accent badge */}
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '6px 16px',
+                borderRadius: '99px',
+                background: tab.light,
+                color: tab.color,
+                fontSize: '12px',
+                fontWeight: 700,
+                marginBottom: '18px',
+                fontFamily: "'Poppins', sans-serif",
+              }}
+            >
+              <span>{tab.icon}</span> {tab.label} Program
+            </div>
+
+            <h3
+              style={{
+                fontSize: '22px',
+                fontWeight: 700,
+                color: '#111',
+                margin: '0 0 10px',
+                fontFamily: "'Poppins', sans-serif",
+              }}
+            >
+              {tab.heading}
+            </h3>
+
+            {/* Highlights grid */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                gap: '12px',
+                marginTop: '20px',
+              }}
+            >
+              {tab.highlights.map((h, i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    borderRadius: '12px',
+                    padding: '12px 16px',
+                    background: tab.light,
+                    fontSize: '13px',
+                    fontWeight: 500,
+                    color: '#374151',
+                    animation: 'fadeSlide 0.4s ease forwards',
+                    animationDelay: `${i * 60}ms`,
+                  }}
+                >
                   <span
-                    className="ml-auto text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ background: `${f.color}18`, color: f.color }}
+                    style={{
+                      width: '20px',
+                      height: '20px',
+                      borderRadius: '50%',
+                      background: tab.color,
+                      color: '#fff',
+                      fontSize: '11px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                    }}
                   >
-                    View
+                    ✓
                   </span>
+                  {h}
                 </div>
               ))}
             </div>
 
-            {/* Footer */}
-            <div className="px-5 pb-5">
-              <button
-                className="w-full py-3 rounded-xl text-sm font-bold text-white transition-all duration-300 hover:opacity-90 hover:shadow-lg active:scale-95"
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  background: '#0EA569',
-                  boxShadow: '0 4px 16px #0EA56940',
-                }}
-              >
-                Meet All Faculty →
-              </button>
-            </div>
+            {/* CTA */}
+            <button
+              style={{
+                marginTop: '28px',
+                padding: '12px 28px',
+                borderRadius: '12px',
+                border: 'none',
+                background: tab.color,
+                color: '#fff',
+                fontSize: '13px',
+                fontWeight: 700,
+                cursor: 'pointer',
+                fontFamily: "'Poppins', sans-serif",
+                boxShadow: `0 4px 20px ${tab.color}40`,
+                transition: 'transform 0.2s, box-shadow 0.2s',
+              }}
+              onMouseEnter={e => { e.target.style.transform = 'scale(1.04)' }}
+              onMouseLeave={e => { e.target.style.transform = 'scale(1)' }}
+            >
+              Explore {tab.label} Courses →
+            </button>
           </div>
         </div>
       </div>
