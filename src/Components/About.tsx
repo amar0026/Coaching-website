@@ -166,7 +166,7 @@ export default function AboutSection() {
 
                         <h2
                             className="text-3xl md:text-4xl font-black text-gray-900 leading-tight mb-5 min-h-[6rem] md:min-h-[7rem]"
-                            style={{ fontFamily: "'Poppins', sans-serif" }}
+                          
                         >
                             {displayed}
                             {!done && (
@@ -201,7 +201,7 @@ export default function AboutSection() {
                       <button
   className="px-6 py-3 rounded-lg font-bold text-white text-sm bg-[#1a1a1a] transition-all duration-300 hover:bg-[#0EA569] hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
   style={{
-    fontFamily: "'Poppins', sans-serif",
+  
     opacity: done ? 1 : 0,
   }}
 >
@@ -223,7 +223,7 @@ export default function AboutSection() {
                             <div>
                                 <p
                                     className="font-black text-gray-900 text-base"
-                                    style={{ fontFamily: "'Poppins', sans-serif" }}
+                                   
                                 >
                                     Dedicated to Academic Excellence
                                 </p>

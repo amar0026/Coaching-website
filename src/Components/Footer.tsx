@@ -113,7 +113,7 @@ export default function Footer() {
           {/* ── Col 2: Quick Links ── */}
           <div>
             <h4 className="text-white font-bold text-base mb-5"
-              style={{ fontFamily: "'Poppins', sans-serif" }}>
+              >
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -134,7 +134,7 @@ export default function Footer() {
           {/* ── Col 3: Courses ── */}
           <div>
             <h4 className="text-white font-bold text-base mb-5"
-              style={{ fontFamily: "'Poppins', sans-serif" }}>
+              >
               Courses
             </h4>
             <ul className="space-y-3">
@@ -155,7 +155,7 @@ export default function Footer() {
           {/* ── Col 4: Contact Info ── */}
           <div>
             <h4 className="text-white font-bold text-base mb-5"
-              style={{ fontFamily: "'Poppins', sans-serif" }}>
+           >
               Contact Info
             </h4>
             <ul className="space-y-3">

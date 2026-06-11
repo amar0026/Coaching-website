@@ -64,7 +64,7 @@ export default function Testimonials() {
             Student Reviews
           </p>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900"
-            style={{ fontFamily: "'Poppins', sans-serif" }}>
+            >
             What Our Students Say
           </h2>
           <div className="mt-3 w-16 h-1 rounded-full mx-auto" style={{ background: '#FACC15' }} />
@@ -122,13 +122,13 @@ export default function Testimonials() {
               <div className="flex items-center gap-3">
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-black flex-shrink-0"
-                  style={{ background: t.color, fontFamily: "'Poppins', sans-serif" }}
+                  style={{ background: t.color, }}
                 >
                   {t.avatar}
                 </div>
                 <div>
                   <p className="text-sm font-bold text-gray-900"
-                    style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  >
                     {t.name}
                   </p>
                   <p className="text-xs text-gray-400">{t.role}</p>

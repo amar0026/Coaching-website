@@ -48,7 +48,7 @@ export default function Categories() {
       id="programs"
       style={{
         background: '#fff',
-        fontFamily: "'Inter', 'Poppins', sans-serif",
+
         padding: '72px 48px',
         minHeight: '560px',
       }}
@@ -91,7 +91,7 @@ export default function Categories() {
                 lineHeight: 1.22,
                 color: '#111',
                 margin: '0 0 14px',
-                fontFamily: "'Poppins', sans-serif",
+
               }}
             >
               Programs for Every Learner
@@ -140,7 +140,7 @@ export default function Categories() {
                       fontWeight: 600,
                       cursor: 'pointer',
                       transition: 'all 0.18s',
-                      fontFamily: "'Poppins', sans-serif",
+
                       boxShadow: isActive ? `0 4px 14px ${t.color}35` : 'none',
                       transform: isActive ? 'translateY(-1px)' : 'translateY(0)',
                     }}
@@ -182,9 +182,9 @@ export default function Categories() {
               style={{
                 position: 'absolute',
                 top: 0,
-                right: 0,
+                right: 100,
                 width: '230px',
-                height: '230px',
+                height: '300px',
                 background: tab.color,
                 borderRadius: '20px',
                 transition: 'background 0.4s',
@@ -195,8 +195,8 @@ export default function Categories() {
             <div
               style={{
                 position: 'absolute',
-                top: '14px',
-                right: '248px',
+                top: '50px',
+                right: '56px',
                 width: '16px',
                 height: '16px',
                 borderRadius: '50%',
@@ -262,7 +262,7 @@ export default function Categories() {
                     fontWeight: 700,
                     color: '#111',
                     lineHeight: 1.2,
-                    fontFamily: "'Poppins', sans-serif",
+
                   }}
                 >
                   54.3K
@@ -320,7 +320,7 @@ export default function Categories() {
                       fontSize: '12px',
                       fontWeight: 700,
                       color: '#fff',
-                      fontFamily: "'Poppins', sans-serif",
+
                     }}
                   >
                     Expert teachers
@@ -366,7 +366,7 @@ export default function Categories() {
                         fontWeight: 700,
                         color: '#fff',
                         flexShrink: 0,
-                        fontFamily: "'Poppins', sans-serif",
+
                       }}
                     >
                       {f.avatar}
@@ -377,7 +377,7 @@ export default function Categories() {
                           fontSize: '12px',
                           fontWeight: 600,
                           color: '#111',
-                          fontFamily: "'Poppins', sans-serif",
+
                         }}
                       >
                         {f.name}
@@ -409,7 +409,6 @@ export default function Categories() {
                     fontSize: '11px',
                     fontWeight: 700,
                     cursor: 'pointer',
-                    fontFamily: "'Poppins', sans-serif",
                     boxShadow: '0 2px 10px #0EA56935',
                   }}
                 >
@@ -446,7 +445,7 @@ export default function Categories() {
                 fontSize: '12px',
                 fontWeight: 700,
                 marginBottom: '18px',
-                fontFamily: "'Poppins', sans-serif",
+
               }}
             >
               <span>{tab.icon}</span> {tab.label} Program
@@ -458,7 +457,7 @@ export default function Categories() {
                 fontWeight: 700,
                 color: '#111',
                 margin: '0 0 10px',
-                fontFamily: "'Poppins', sans-serif",
+
               }}
             >
               {tab.heading}
@@ -511,30 +510,30 @@ export default function Categories() {
               ))}
             </div>
 
-        <button
-  style={{
-    marginTop: '28px',
-    padding: '12px 28px',
-    borderRadius: '12px',
-    border: 'none',
-    background: tab.color,
-    color: '#fff',
-    fontSize: '13px',
-    fontWeight: 700,
-    cursor: 'pointer',
-    fontFamily: "'Poppins', sans-serif",
-    boxShadow: `0 4px 20px ${tab.color}40`,
-    transition: 'transform 0.2s, box-shadow 0.2s',
-  }}
-  onMouseEnter={(e) => {
-    e.currentTarget.style.transform = 'scale(1.04)'
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.transform = 'scale(1)'
-  }}
->
-  Explore {tab.label} Courses →
-</button>
+            <button
+              style={{
+                marginTop: '28px',
+                padding: '12px 28px',
+                borderRadius: '12px',
+                border: 'none',
+                background: tab.color,
+                color: '#fff',
+                fontSize: '13px',
+                fontWeight: 700,
+                cursor: 'pointer',
+
+                boxShadow: `0 4px 20px ${tab.color}40`,
+                transition: 'transform 0.2s, box-shadow 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.04)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)'
+              }}
+            >
+              Explore {tab.label} Courses →
+            </button>
           </div>
         </div>
       </div>

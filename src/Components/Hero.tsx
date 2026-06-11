@@ -79,13 +79,19 @@ export default function HeroSection() {
     const arrowRef = useRef<HTMLDivElement>(null)
     const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
-    const line1 = 'Unlock Your Academic'
-    const line2 = 'Excellence'
-    const line3 = 'with Expert Guidance'
+    const line1 = 'Online '
+    const line2 = 'Tutoring'
+    const line3 = ' Can Provide'
+    const line4 = 'You with '
+    const line5 = 'High-Quality'
+    const line6 = ' Tutoring.'
 
     const tw1 = useTypewriter(line1, 50, 200)
     const tw2 = useTypewriter(line2, 60, tw1.done ? 100 : 99999)
     const tw3 = useTypewriter(line3, 50, tw2.done ? 100 : 99999)
+    const tw4 = useTypewriter(line4, 50, tw3.done ? 100 : 99999)
+    const tw5 = useTypewriter(line5, 60, tw4.done ? 100 : 99999)
+    const tw6 = useTypewriter(line6, 50, tw5.done ? 100 : 99999)
 
     const progHeading = 'Our Learning Programs'
     const twProg = useTypewriter(progHeading, 55, 600)
@@ -125,131 +131,104 @@ export default function HeroSection() {
 
     return (
         <>
+
             {/* ── HERO SECTION ── */}
-            <section className="relative bg-white overflow-hidden flex flex-col">
-
-                {/* Decorations */}
-                <div className="absolute top-6 right-16 w-14 h-8 rounded-full z-10"
-                    style={{ background: 'linear-gradient(135deg, #a855f7 0%, #6d28d9 100%)' }}>
-                    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-7 h-4 rounded-full"
-                        style={{ background: '#86efac' }} />
-                </div>
-                <div className="absolute top-20 right-10 w-5 h-5 rounded-full" style={{ background: '#86efac' }} />
-                <DecorBlob color="#f9a8d4" size="56px" className="left-10 top-[44%]" />
-
-                {/* Curved arrow */}
-                <div ref={arrowRef} className="absolute left-8 top-24 w-20 h-20 pointer-events-none">
-                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                        <path d="M20 65 Q10 30 45 15" stroke="#222" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                        <path d="M40 10 L50 18 L40 22" stroke="#222" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </div>
+            <section
+                className="relative overflow-hidden pt-5 flex flex-col items-center "
+                style={{
+                    minHeight: "600px",
+                    backgroundImage:
+                        "url(https://res.cloudinary.com/dquki4xol/image/upload/v1781174455/Group_85_khaenf.png)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                }}
+            >
 
                 {/* Text content */}
-                <div className="relative z-10 flex flex-col items-center pt-10 pb-0 px-6 text-center">
+                <div className="relative z-10 -mt-5 mx-auto max-w-4xl text-center flex flex-col">
                     <h1
-                        className="font-black text-4xl md:text-5xl text-gray-900 leading-tight max-w-2xl min-h-[4rem] md:min-h-[6rem]"
-                        style={{ fontFamily: "'Poppins', sans-serif" }}
+                        className="font-black text-2xl md:text-5xl text-gray-900 leading-tight min-h-[4rem] md:min-h-[6rem]"
+    
                     >
+                        {/* "Online " */}
                         <span>{tw1.displayed}</span>
+
+                        {/* "Tutoring" — yellow underline */}
                         {tw1.done && (
-                            <>
-                                {' '}
-                                <span className="relative inline-block">
-                                    <span className="relative z-10">{tw2.displayed}</span>
-                                    {tw2.done && (
-                                        <span
-                                            className="absolute bottom-1 left-0 w-full h-3 -z-0 rounded"
-                                            style={{ background: '#FACC15', opacity: 0.5, animation: 'expandBar 0.4s ease forwards' }}
-                                        />
-                                    )}
-                                </span>
-                            </>
-                        )}
-                        {tw2.done && (
-                            <>
-                                {' '}
-                                <span>{tw3.displayed}</span>
-                            </>
-                        )}
-                        {!tw3.done && (
-                            <span style={{ animation: 'blink 0.75s step-end infinite', borderRight: '3px solid #0EA569', marginLeft: '2px' }} />
-                        )}
-                    </h1>
-
-                    <p className="mt-4 text-gray-500 text-base md:text-lg max-w-xl leading-relaxed"
-                        style={{ opacity: tw3.done ? 1 : 0, transition: 'opacity 0.6s ease', transitionDelay: '0.2s' }}>
-                        Personalized coaching programs designed to help students achieve outstanding results
-                        in school, college, and competitive examinations.
-                    </p>
-
-                    <p className="mt-3 text-gray-400 text-sm md:text-base max-w-lg leading-relaxed"
-                        style={{ opacity: tw3.done ? 1 : 0, transition: 'opacity 0.6s ease', transitionDelay: '0.45s' }}>
-                        Our experienced educators provide interactive learning, individual attention, and proven
-                        teaching methods that empower students to reach their full potential and build confidence
-                        in every subject.
-                    </p>
-                </div>
-
-                {/* Students Row with Yellow Arch Background */}
-                <div className="relative z-10 flex justify-center items-end mt-6" style={{ minHeight: '280px' }}>
-
-                    {/* Big Yellow Arch behind all students */}
-                    <div
-                        className="absolute bottom-0 left-1/2 -translate-x-1/2"
-                        style={{
-                            width: '520px',
-                            height: '260px',
-                            background: '#EEFFD9',
-                            borderRadius: '260px 260px 0 0',
-                            zIndex: 0,
-                        }}
-                    />
-
-                    {/* Students */}
-                    <div className="relative z-10 flex justify-center items-end gap-2">
-                        {students.map((s, i) => {
-                            const isCenter = s.size === 'large'
-                            const circleSize = isCenter ? '200px' : '140px'
-                            const imgWidth = isCenter ? '220px' : '160px'
-                            const containerH = isCenter ? '290px' : '220px'
-                            const containerW = isCenter ? '200px' : '148px'
-
-                            return (
-                                <div
-                                    key={i}
-                                    className="relative flex justify-center items-end"
-                                    style={{
-                                        width: containerW,
-                                        height: containerH,
-                                        animation: `floatUp 0.6s ease ${s.delay} both`,
-                                    }}
-                                >
-                                    {/* Colored circle per student */}
-                                    <div
-                                        className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full"
+                            <span className="relative inline-block">
+                                <span className="relative z-10">{tw2.displayed}</span>
+                                {tw2.done && (
+                                    <span
+                                        className="absolute left-0 w-full rounded"
                                         style={{
-                                            width: circleSize,
-                                            height: `calc(${circleSize} / 2)`,
-                                            background: s.bg,
-                                            borderRadius: `${circleSize} ${circleSize} 0 0`,
-                                            zIndex: 1,
+                                            bottom: '2px',
+                                            height: '10px',
+                                            background: '#FACC15',
+                                            opacity: 0.6,
+                                            zIndex: 0,
+                                            animation: 'expandBar 0.4s ease forwards',
                                         }}
                                     />
+                                )}
+                            </span>
+                        )}
 
-                                    {/* Student Image */}
-                                    <img
-                                        src={s.img}
-                                        alt={`Student ${i + 1}`}
-                                        draggable={false}
-                                        className="absolute bottom-0 left-1/2 -translate-x-1/2 object-contain z-10"
-                                        style={{ width: imgWidth, height: 'auto' }}
+                        {/* " Can Provide" */}
+                        {tw2.done && <span>{tw3.displayed}</span>}
+
+                        {/* Line break */}
+                        {tw3.done && <br />}
+
+                        {/* "You with " */}
+                        {tw3.done && <span>{tw4.displayed}</span>}
+
+                        {/* "High-Quality" — yellow underline */}
+                        {tw4.done && (
+                            <span className="relative inline-block">
+                                <span className="relative z-10">{tw5.displayed}</span>
+                                {tw5.done && (
+                                    <span
+                                        className="absolute left-0 w-full rounded"
+                                        style={{
+                                            bottom: '2px',
+                                            height: '10px',
+                                            background: '#FACC15',
+                                            opacity: 0.6,
+                                            zIndex: 0,
+                                            animation: 'expandBar 0.4s ease forwards',
+                                        }}
                                     />
-                                </div>
-                            )
-                        })}
-                    </div>
+                                )}
+                            </span>
+                        )}
+
+                        {/* " Tutoring." */}
+                        {tw5.done && <span>{tw6.displayed}</span>}
+
+                        {/* Blinking cursor */}
+                        {!tw6.done && (
+                            <span
+                                style={{
+                                    animation: 'blink 0.75s step-end infinite',
+                                    borderRight: '3px solid #0EA569',
+                                    marginLeft: '2px',
+                                }}
+                            />
+                        )}
+                    </h1>
+                    <p
+                        className="text-gray-500  text-sm max-w-2xl mx-auto text-center leading-relaxed"
+                        style={{
+                            opacity: tw3.done ? 1 : 0,
+                            transition: 'opacity 0.6s ease',
+                            transitionDelay: '0.2s',
+                        }}
+                    >
+                       Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    </p>
                 </div>
+
             </section>
 
             {/* ── PROGRAMS SECTION ── */}
@@ -359,6 +338,15 @@ export default function HeroSection() {
         @keyframes expandBar {
           from { transform: scaleX(0); transform-origin: left; }
           to   { transform: scaleX(1); transform-origin: left; }
+        }
+      `}</style>
+            <style>{`
+        @keyframes expandBar {
+          from { width: 0; }
+          to { width: 100%; }
+        }
+        @keyframes blink {
+          50% { opacity: 0; }
         }
       `}</style>
         </>

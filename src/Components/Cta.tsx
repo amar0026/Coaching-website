@@ -48,7 +48,7 @@ function StatCard({ value, suffix, label, delay, started }: {
     <div className="flex flex-col items-center justify-center bg-white/15 backdrop-blur-sm rounded-2xl px-6 py-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-1 group">
       <div
         className="text-4xl md:text-5xl font-black text-white mb-2 tabular-nums transition-all duration-300 group-hover:scale-105"
-        style={{ fontFamily: "'Poppins', sans-serif", textShadow: '0 2px 12px rgba(0,0,0,0.15)' }}
+        style={{  textShadow: '0 2px 12px rgba(0,0,0,0.15)' }}
       >
         {count.toLocaleString()}{suffix}
       </div>
@@ -103,7 +103,7 @@ export default function CTAStats() {
                 Limited Seats Available
               </span>
               <h2 className="text-3xl md:text-4xl font-black text-white mb-4 leading-tight"
-                style={{ fontFamily: "'Poppins', sans-serif" }}>
+                >
                 Ready to Transform Your<br />
                 <span style={{ color: '#FACC15' }}>Learning Journey?</span>
               </h2>
@@ -126,7 +126,7 @@ export default function CTAStats() {
               <button
                 className="relative overflow-hidden px-8 py-4 rounded-2xl font-black text-sm tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95"
                 style={{
-                  fontFamily: "'Poppins', sans-serif",
+                 
                   background: '#FACC15',
                   color: '#1a1a2e',
                   boxShadow: '0 8px 32px rgba(250,204,21,0.35)',
@@ -157,7 +157,7 @@ export default function CTAStats() {
           <div className="text-center mb-10">
             <p className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">Our Impact</p>
             <h3 className="text-2xl md:text-3xl font-black text-white"
-              style={{ fontFamily: "'Poppins', sans-serif" }}>
+            >
               Numbers That Speak
             </h3>
             <div className="mt-2 w-10 h-1 rounded-full mx-auto bg-yellow-300" />
