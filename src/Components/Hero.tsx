@@ -1,17 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-interface DecorBlobProps {
-    color: string
-    size: string
-    className?: string
-}
 
-const DecorBlob = ({ color, size, className }: DecorBlobProps) => (
-    <div
-        className={`rounded-full absolute ${className}`}
-        style={{ background: color, width: size, height: size, opacity: 0.85 }}
-    />
-)
 
 const programs = [
     {
