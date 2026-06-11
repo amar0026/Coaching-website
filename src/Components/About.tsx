@@ -56,7 +56,7 @@ export default function AboutSection() {
                     >
                         {/* Sparkles */}
                         <div
-                            className="absolute top-2 left-6 text-orange-500 text-6xl select-none"
+                            className="absolute top-2  text-orange-500 text-5xl select-none"
                             style={{
                                 zIndex: 50,
                                 lineHeight: 1,
@@ -67,7 +67,7 @@ export default function AboutSection() {
                         </div>
 
                         <div
-                            className="absolute top-8 left-16 text-orange-400 text-5xl select-none"
+                            className="absolute top-8 left-6 text-orange-400 text-5xl select-none"
                             style={{
                                 zIndex: 50,
                                 animation: inView ? 'sparkle 2.4s ease 0.3s infinite' : 'none'
@@ -77,7 +77,7 @@ export default function AboutSection() {
                         </div>
 
                         <div
-                            className="absolute bottom-16 left-2 text-green-500 text-4xl select-none"
+                            className="absolute bottom-16  text-green-500 text-3xl select-none"
                             style={{
                                 zIndex: 30,
                                 animation: inView ? 'sparkle 2.8s ease 0.6s infinite' : 'none'
