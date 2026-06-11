@@ -511,27 +511,30 @@ export default function Categories() {
               ))}
             </div>
 
-            {/* CTA */}
-            <button
-              style={{
-                marginTop: '28px',
-                padding: '12px 28px',
-                borderRadius: '12px',
-                border: 'none',
-                background: tab.color,
-                color: '#fff',
-                fontSize: '13px',
-                fontWeight: 700,
-                cursor: 'pointer',
-                fontFamily: "'Poppins', sans-serif",
-                boxShadow: `0 4px 20px ${tab.color}40`,
-                transition: 'transform 0.2s, box-shadow 0.2s',
-              }}
-              onMouseEnter={e => { e.target.style.transform = 'scale(1.04)' }}
-              onMouseLeave={e => { e.target.style.transform = 'scale(1)' }}
-            >
-              Explore {tab.label} Courses →
-            </button>
+        <button
+  style={{
+    marginTop: '28px',
+    padding: '12px 28px',
+    borderRadius: '12px',
+    border: 'none',
+    background: tab.color,
+    color: '#fff',
+    fontSize: '13px',
+    fontWeight: 700,
+    cursor: 'pointer',
+    fontFamily: "'Poppins', sans-serif",
+    boxShadow: `0 4px 20px ${tab.color}40`,
+    transition: 'transform 0.2s, box-shadow 0.2s',
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'scale(1.04)'
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'scale(1)'
+  }}
+>
+  Explore {tab.label} Courses →
+</button>
           </div>
         </div>
       </div>
