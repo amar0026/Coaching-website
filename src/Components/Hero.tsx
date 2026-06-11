@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 
 
 
+
+
 const programs = [
     {
         icon: '📚',
@@ -97,27 +99,7 @@ export default function HeroSection() {
         }, 300)
     }, [])
 
-    const students = [
-        {
-            bg: "#FACC15",
-            delay: "0s",
-            img: "https://res.cloudinary.com/dquki4xol/image/upload/v1781091901/college-student-YCNL3GU-1-ptib3cymvqexaw01pv2ajt0xkogtxflro86oam5oha_dk7lis.png",
-            size: 'small', // left
-        },
-        {
-            bg: "#0EA569",
-            delay: "0.15s",
-            img: "https://res.cloudinary.com/dquki4xol/image/upload/v1781086088/45694a86c735b2e1b40d6a970152d7b7b1f8506b_yab6gd.png",
-            size: 'large', // center
-        },
-        {
-            bg: "#17ADDF",
-            delay: "0s",
-            img: "https://res.cloudinary.com/dquki4xol/image/upload/v1781159882/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTExL3Jhd3BpeGVsX29mZmljZV8zMF9waG90b19vZl95b3VuZ19zb3V0aF9hc2lhbl9naXJsX2hvbGRpbmdfc3R1ZF8xOTQyYTRkYi01YjA5LTQ2NDItYjc0YS04YjU4MjdiYjhjMjgucG5n-removebg-previe_ygo6pt.png",
-            size: 'small', // right
-        },
-    ]
-
+    
     return (
         <>
 
